@@ -115,8 +115,6 @@ main {
     padding: 20px;
 }
 
-
-
 .topicheader {
     display: flex;
     height: 110px;
@@ -124,7 +122,7 @@ main {
     flex-direction: row;
 }
 
-.text {
+.headertext {
     position: relative;
     background-image: url("../Images/Logo\ Small.png");
     background-repeat: no-repeat;
@@ -145,20 +143,67 @@ main {
     margin: 20px;
 }
 
+/********** main content */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    "eyecandy projtext projtext"
+    "eyecandy projtext projtext"
+    "eyecandy projtext projtext";
+    justify-content: center; 
+    align-items: center;
+    gap: 30px; /* between grid items */
+    margin-bottom: 20px; /* margin between grid containers */
+  }
+  
+.projtext {
+    display:grid;
+    grid-template-areas:
+    "projtype"
+    "projtitle"
+    "description";
+}
+
+.projtext > projtitle {
+    background-color: antiquewhite;
+}
+  /* Style for the grid item containing the image */
+  .grid-item img {
+    max-width: 75%;
+    height: auto;
+    align-content: center;
+    justify-content: right;
+    margin-left: 25%;
+    padding-top: 20px;
+  }
+  
+  /* Style for the text grid item */
+  .grid-item.text {
+    text-align: left;
+  }
+
+  #ProjectTitle {
+    font-size: 48px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+
 
 
 /***** Style the footer */
 footer {
- /* background-color: #333; */
+    background-color: #507E15; 
     color: #161616;
     text-align: center;
-    padding-top: 150px;
+    padding: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 10px;
 }
 
+/*
 .dome-background {
     position: absolute;
     top: 0;
@@ -171,11 +216,11 @@ footer {
 .dome {
     position: absolute;
     bottom: -350px; /* Half of the dome height */
-    left: 50%;
+/*    left: 50%;
     transform: translateX(-50%);
     width: 80%;
     height: 600px; /* Adjust the height of the dome */
-    background-color: #507E15;
+/*    background-color: #507E15;
     border-radius: 50%;
     border-top-left-radius: 10;
     border-top-right-radius: 10;
@@ -192,6 +237,7 @@ footer {
     flex-direction: column;
     z-index: 1;
 }
+*/  
 
 .colab {
     font-size: 46px;
@@ -205,6 +251,7 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    z-index: 1;
 }
 
 .footlist li {
@@ -214,11 +261,11 @@ footer {
 .footlist a {
     text-decoration: none;
     color: #161616;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .footlist a:hover {
-    color: #f7f7f7;
+    color: #fff;
 }
 
 /* copyright */
@@ -235,6 +282,10 @@ footer p:last-child {
         margin-right: 0;
         margin-bottom: 10px;
     }
+
+    .grid-container {
+        grid-template-areas: 
+        "eyecandy"
+        "projtext";
+    }
 }
-
-
