@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CJ Jewell PhD</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <link rel="stylesheet" href="CSS/style.css">
+
+    <script src="JS/index.js"></script>
 
     <!--  Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,76 +19,40 @@
     <link rel="stylesheet" href="Fonts/VioletSans-Regular.ttf">
 
 
-
-   <!--  <script src="script.js"></script> -->
 </head>
 
 <!-----------------         body         -------------------->
 
 <body>
 
+
+
     <!------- header-->
 
     <header>
         <nav>
             <ul class="nav-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
                 <li><a href="#">Resume</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-    <!--------- background -->
-    <div id="particle-container">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+
 
     <!--------hero-->
-    <hero>
+    <!--------hero -->
+    <hero id="about">
         <div class="hero-text-container">
             <p class = "chicago">Based in Chicago, IL</p>
             <h1 class = "cj">CJ Jewell, PhD</h1>
-            <br>
+        
             <h2 class = "ddd">Design + Data = Discovery</h2>
-            <br>
-            <br>
-            <br>
-            <br>    
+     
             <p class="skills">Data Visualization // Business Intelligence // Data Science // UI // UX // Research // Inclusive Design // R, SQL, HTML, CSS // Wireframing // Prototyping // Visual Storytelling // Accessibility</p>
 
-            <br>
-            <br>
             <p>CJ is a lover of plants. They are also a data scientist, UX/UI designer, scientist, greyhound rescuer, and cat treat dispenser.</p>
             <p>CJ's career goal is to fuse their scientific and data skills with UI/UX design. Sustainability and accessibility are CJ's passions, as they aim to transform the world into a leafier, greener, and more inclusive place. Their primary quest is to create accessible digital experiences that reflect the beauty and growth found in nature, nurturing a more connected and sustainable digital landscape.</p>
             <p>CJ finds joy in board games, immersing themselves in worlds crafted by LGBTQ+ authors, and delving into the vibrant vibes, tastes, and scents of Chicago neighborhoods.</p>
@@ -98,21 +67,23 @@
     </hero>
 
 
+     <!-- particles.js container --> 
+     
+
+
 
 
 
 
 
     <!--------main-->
-    <main>
+    <main id="work">
         <div class="topicheader">
             <div class="headertext">
                 <p class="topictext">Featured</p>
-
             </div>
         </div>
-        <br>
-        <br>
+
 
         <div class="grid-container">
             <eyecandy class="grid-item">
@@ -140,13 +111,10 @@
             </projtext>
         </div>
     </main>
-    <br>
-    <br>
-    <br>
-    
+
     <!------- footer-->
 
-    <footer>
+    <footer id="contact">
  <!--      <div class="dome-background">
             <div class="dome">
                 <div class="content"> -->
@@ -162,6 +130,11 @@
         </div> -->
         
     </footer>
+
+
+    <div class = "preloader">
+        <img src="/Images/white-infinity-symbol-transparent-background-circle.png">
+    </div>
 
 </body>
 </html>
