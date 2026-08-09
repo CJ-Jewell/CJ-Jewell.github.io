@@ -1,0 +1,589 @@
+/* ============================================================
+   work.css  ·  styles for the Work page (/work/)
+   Layers on top of style.css.
+
+   Palette borrows from the UX Navigator project. Deep navy ink,
+   greens and blues for accent, kept light and clean rather than
+   dark. Fonts stay as they were, Space Grotesk and Violet Sans.
+   ============================================================ */
+
+:root {
+    --page:        #f7f9f8;   /* page plane            */
+    --card:        #ffffff;   /* raised surface        */
+    --ink:         #16303d;   /* deep navy, headings   */
+    --ink-body:    #2f4450;   /* body text             */
+    --ink-soft:    #5d7079;   /* secondary text        */
+    --rule:        #dde5e5;   /* hairlines             */
+
+    --green:       #2f8f5b;
+    --green-deep:  #1f6b41;
+    --green-wash:  #e9f4ee;
+    --blue:        #2f6fd0;
+    --blue-deep:   #1f4f9c;
+    --blue-wash:   #e9f0fb;
+    --cyan:        #3fa8c9;
+}
+
+/* ---------- viz roles ----------
+   Categorical hues are used in fixed slot order and capped at
+   three, because the force graph is an all-pairs form. The
+   layout can place any node beside any other, so every color
+   pair has to survive comparison, not just neighboring ones.
+   Structural nodes take a neutral rather than a hue, since they
+   are not a category. Clade identity rides on labels and hover,
+   so nothing depends on color alone. */
+.viz-root {
+    --surface-1:      #ffffff;
+    --text-primary:   #16303d;
+    --text-secondary: #5d7079;
+    --text-muted:     #8497a0;
+    --gridline:       #dde5e5;
+    --baseline:       #c2d0d3;
+    --series-1:       #2a78d6;  /* species tip       */
+    --series-2:       #eb6834;  /* outgroup          */
+    --series-3:       #1baf7a;  /* named clade       */
+    --structural:     #8497a0;  /* ancestral node    */
+}
+
+/* ---------- page ---------- */
+body {
+    background-color: var(--page);
+    color: var(--ink-body);
+}
+
+.work-intro {
+    max-width: 60ch;
+    padding: 20px;
+}
+
+.work-intro h1 {
+    color: var(--ink);
+}
+
+.work-intro .lead {
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--ink-body);
+    margin-bottom: 0;
+}
+
+/* ---------- section rhythm ----------
+   Spacing does the grouping. A header sits far from what came
+   before it and close to what it introduces, so it never reads
+   as a caption for the thing above. */
+.work-section {
+    padding: 44px 20px 20px 20px;
+    margin-top: 40px;
+    border-top: 2px solid var(--rule);
+}
+
+.work-section:first-of-type {
+    margin-top: 8px;
+}
+
+.section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.section-kicker {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin: 0;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 34px;
+    font-family: "Violet Sans", 'Space Grotesk', sans-serif;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.15;
+}
+
+.section-note {
+    max-width: 58ch;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+}
+
+/* ---------- icons ---------- */
+.icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--green-wash);
+    color: var(--green-deep);
+    flex: none;
+}
+
+.icon-badge.is-blue {
+    background: var(--blue-wash);
+    color: var(--blue-deep);
+}
+
+/* ---------- project cards ---------- */
+.project {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 36px;
+    align-items: start;
+    padding: 36px 0 8px 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--rule);
+}
+
+.project:first-of-type {
+    border-top: none;
+    padding-top: 8px;
+    margin-top: 0;
+}
+
+/* in a stacked card the title comes first, then the diagram,
+   then the collapsibles, so a heading is never mistaken for a
+   caption on the figure above it */
+.project--stacked .project-intro {
+    margin-bottom: 20px;
+}
+
+.project--stacked .project-extra {
+    margin-top: 18px;
+}
+
+.project-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    border: 1px solid var(--rule);
+}
+
+/* A phone mockup is about 1:2, so sizing it by width makes it
+   tower over everything. Cap it by height and center it instead. */
+.project-media img.is-portrait {
+    width: auto;
+    max-width: 100%;
+    max-height: 470px;
+    margin: 0 auto;
+}
+
+.project-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* The first project in a section sits directly under the section
+   badge. Two badges stacked read as a duplicate, so the card drops
+   its own and keeps just the kicker. */
+.work-section > .project:first-of-type .project-head .icon-badge {
+    display: none;
+}
+
+.project-type {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin: 0;
+}
+
+.project-title {
+    font-size: 28px;
+    color: var(--ink);
+    margin: 0 0 12px 0;
+    padding: 0;
+}
+
+.project-body p {
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.project-lede {
+    font-size: 18px;
+    color: var(--ink-body);
+}
+
+.project-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--blue-deep);
+    border: 1.5px solid var(--blue);
+    border-radius: 22px;
+    padding: 8px 18px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+/* stacked layout, for a card whose media is a diagram.
+   Scaled into a half-width cell the diagram's labels render
+   around 7px, which is not readable. */
+.project--stacked {
+    grid-template-columns: 1fr;
+}
+
+.project--stacked .project-media {
+    width: 100%;
+    max-width: 1100px;
+    justify-self: center;
+}
+
+.project--stacked .project-body {
+    max-width: 66ch;
+}
+
+.project.is-placeholder {
+    opacity: 0.7;
+}
+
+.placeholder-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border: 2px dashed var(--rule);
+    border-radius: 12px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    text-align: center;
+    padding: 20px;
+    background: var(--card);
+}
+
+/* ---------- dissertation line ---------- */
+.dissertation {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 18px;
+    color: var(--ink);
+    margin: 18px 0 0 0;
+    padding-left: 14px;
+    border-left: 3px solid var(--green);
+}
+
+.dissertation-label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    flex: none;
+}
+
+/* ---------- toolset panel ----------
+   Stands in for work that can't be shown. Reads as a deliberate
+   statement rather than a missing screenshot. */
+.toolset {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.toolset-label {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 14px 0;
+}
+
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 9px 16px;
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--page);
+}
+
+.chip .icon {
+    width: 18px;
+    height: 18px;
+    color: var(--blue-deep);
+}
+
+/* ---------- compact tool cards ----------
+   For work with no screenshot worth showing. Icon led, so the
+   card reads as intentional rather than as a missing image. */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+}
+
+.tool {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.tool .project-title {
+    font-size: 22px;
+}
+
+.tool .project-lede {
+    font-size: 16px;
+}
+
+/* ---------- collapsible depth ----------
+   The surface stays short. Anyone who wants the reasoning
+   opens it. */
+.more {
+    border-top: 1px solid var(--rule);
+    margin-top: 4px;
+    padding-top: 12px;
+}
+
+.more summary {
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--blue-deep);
+    padding: 4px 0;
+}
+
+.more summary::-webkit-details-marker {
+    display: none;
+}
+
+.more summary .chev {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.18s ease;
+}
+
+.more[open] summary .chev {
+    transform: rotate(90deg);
+}
+
+.more summary:hover {
+    color: var(--blue);
+}
+
+.more-body {
+    padding-top: 10px;
+    max-width: 66ch;
+}
+
+.more-body p {
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.more-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- figure frame ---------- */
+.figure {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 22px;
+    margin: 0 0 16px 0;
+    overflow-x: auto;
+}
+
+.figure figcaption {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    max-width: 66ch;
+}
+
+.figure-title {
+    font-size: 22px;
+    color: var(--ink);
+    margin: 0 0 12px 0;
+}
+
+/* legend, always present so identity is never color alone */
+.viz-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 14px;
+    padding: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+}
+
+.viz-legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex: none;
+}
+
+.data-table {
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 7px 12px 7px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+}
+
+.data-table th {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.viz-tip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: opacity 0.12s ease;
+    z-index: 10;
+}
+
+/* ---------- pipeline diagram ---------- */
+.diagram-figure {
+    margin: 0;
+}
+
+.diagram-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.pipeline-list {
+    margin: 12px 0 0 0;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.pipeline-list li {
+    list-style-type: decimal;
+    margin-bottom: 8px;
+}
+
+/* visually hidden, still read by screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- image grids ---------- */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.image-grid figure {
+    margin: 0;
+}
+
+.image-grid img,
+.poster-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    border: 1px solid var(--rule);
+}
+
+.image-grid figcaption {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 8px;
+}
+
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 768px) {
+    .project {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .project-title {
+        font-size: 24px;
+    }
+}

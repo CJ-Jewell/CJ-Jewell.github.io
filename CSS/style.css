@@ -15,8 +15,8 @@ body, h1, h2, h3, p, ul, li {
 
 /* Whole page */
 body {
-  /*  background-color: #fff; */
-    color: #161616;
+    background-color: #f7f9f8;
+    color: #2f4450;
     font-family: 'Space Grotesk', sans-serif;
     padding: 1% 5% 1% 5%;
 }
@@ -27,7 +27,7 @@ p {
 
 /*** Header ***/
 header {
-    background-color: #fff;
+    background-color: transparent;   /* sits on the page, no white band */
     padding: 10px 20px;
     display: flex;
     justify-content: flex-end; /* aligns nav li to the right*/
@@ -54,15 +54,22 @@ header {
 
 .nav-list a {
     text-decoration: none;
-    color: #161616;
-    padding: 8px 12px;
-    background-color: #fff;
+    color: #16303d;
+    padding: 8px 14px;
+    background-color: transparent;
     border-radius: 20px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.nav-list a:hover {
-    background-color: #507E15;
+.nav-list a:hover,
+.nav-list a:focus-visible {
+    background-color: #2f8f5b;
+    color: #fff;
+}
+
+.nav-list a[aria-current="page"] {
+    background-color: #e9f4ee;
+    color: #1f6b41;
 }
 
 

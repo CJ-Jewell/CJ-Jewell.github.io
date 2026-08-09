@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work · CJ Jewell, PhD</title>
+    <meta name="description" content="Selected work by CJ Jewell, PhD. Systems design, UX, and data visualization.">
+
+    <link rel="stylesheet" href="../CSS/style.css?v=10">
+    <link rel="stylesheet" href="../CSS/work.css?v=10">
+
+    <!--  Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+
+<body>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-flow" viewBox="0 0 24 24">
+        <circle cx="6" cy="5.5" r="2.5"/><circle cx="18" cy="12" r="2.5"/><circle cx="6" cy="18.5" r="2.5"/>
+        <path d="M8.3 6.7 15.7 10.8M15.7 13.2 8.3 17.3"/>
+    </symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/><path d="M15.6 8.4 10.4 10.4 8.4 15.6 13.6 13.6Z"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M3 20h18"/><path d="M6.5 20v-5M12 20V6M17.5 20v-8.5"/>
+    </symbol>
+    <symbol id="i-scope" viewBox="0 0 24 24">
+        <circle cx="11" cy="9" r="4.2"/><path d="M11 13.2V18M6.5 20.5h9M14.6 5.4 18.5 2.5"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 21.5s7-6.4 7-11.3a7 7 0 1 0-14 0c0 4.9 7 11.3 7 11.3Z"/><circle cx="12" cy="10" r="2.6"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24">
+        <path d="M6.5 3h7l4.5 4.5V21h-11.5Z"/><path d="M13.5 3v4.5H18"/><path d="M9.5 12.5h5M9.5 16.5h5"/>
+    </symbol>
+    <symbol id="i-table" viewBox="0 0 24 24">
+        <rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 9.5h18M9.5 9.5v10"/>
+    </symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24">
+        <path d="M9 5.5 15.5 12 9 18.5"/>
+    </symbol>
+</svg>
+
+    <!------- header -->
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="../#about">About</a></li>
+                <li><a href="./" aria-current="page">Work</a></li>
+                <li><a href="https://www.linkedin.com/in/cj-jewell">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!------- intro -->
+    <section class="work-intro">
+        <h1 class="ddd">Work</h1>
+        <p class="lead">Systems, interfaces, and figures. Built where design, data,
+        and a lot of patience meet.</p>
+        <p>Some of this started as a question I loved chasing. Some of it started as a
+        mess somebody needed untangled. Those are my two favorite kinds of problem, and
+        it turns out they are the same problem wearing different shoes.</p>
+    </section>
+
+    <!-- ============================================================
+         SYSTEMS & AUTOMATION
+         ============================================================ -->
+    <section class="work-section">
+        <div class="section-head">
+            <span class="icon-badge"><svg class="icon"><use href="#i-flow"></use></svg></span>
+            <p class="section-kicker">Systems &amp; Automation</p>
+        </div>
+        <h2 class="section-title">Designing the workflow, not just the artifact</h2>
+
+        <article class="project project--stacked">
+            <div class="project-body project-intro">
+                <div class="project-head">
+                    <span class="icon-badge"><svg class="icon"><use href="#i-flow"></use></svg></span>
+                    <p class="project-type">Operations design</p>
+                </div>
+                <h3 class="project-title">Hardware Strength &amp; Conditioning</h3>
+                <p class="project-lede">I built the programming pipeline for a local
+                community gym. Three months of training gets written, the coach makes
+                it theirs, it lands in the athlete app, and the emails and Instagram
+                captions come along for the ride. Mostly it gave a coach their Sundays
+                back.</p>
+            </div>
+
+            <div class="project-media">
+                <figure class="figure diagram-figure">
+                    <svg viewBox="0 22 800 546" width="100%"
+                         preserveAspectRatio="xMidYMid meet"
+                         role="img"
+                         aria-label="Flow diagram of the Hardware programming pipeline. A standing context file feeds every step. The flow runs from duplicating the template tab, to generating the month, to pasting it in as one block. At that point the Google Sheet becomes the source of truth and the coach edits there. Then btwb entry reads from the sheet, then communications. A return path carries new efficiencies back into the prompts. The same sequence is written out in the text version below.">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+                                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#8497a0"></path>
+                            </marker>
+                            <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5"
+                                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f8f5b"></path>
+                            </marker>
+                        </defs>
+
+                        <g font-family="'Space Grotesk', sans-serif">
+
+                            <!-- standing context rail -->
+                            <rect x="20" y="128" width="150" height="422" rx="12"
+                                  fill="#f2f6f5" stroke="#dde5e5" stroke-width="1.5"></rect>
+                            <text x="95" y="156" text-anchor="middle" font-size="13.5" font-weight="600" fill="#16303d">01 · Standing</text>
+                            <text x="95" y="173" text-anchor="middle" font-size="13.5" font-weight="600" fill="#16303d">context</text>
+                            <text x="95" y="200" text-anchor="middle" font-size="11.5" fill="#5d7079">Gym, tone, schedule,</text>
+                            <text x="95" y="216" text-anchor="middle" font-size="11.5" fill="#5d7079">equipment, btwb</text>
+                            <text x="95" y="232" text-anchor="middle" font-size="11.5" fill="#5d7079">format rules.</text>
+                            <text x="95" y="258" text-anchor="middle" font-size="11.5" fill="#5d7079">Pasted at the top</text>
+                            <text x="95" y="274" text-anchor="middle" font-size="11.5" fill="#5d7079">of every session,</text>
+                            <text x="95" y="290" text-anchor="middle" font-size="11.5" fill="#5d7079">so nothing gets</text>
+                            <text x="95" y="306" text-anchor="middle" font-size="11.5" fill="#5d7079">re-explained.</text>
+
+                            <line x1="170" y1="155" x2="188" y2="155" stroke="#c2d0d3" stroke-width="1.5" stroke-dasharray="3 3"></line>
+                            <line x1="170" y1="243" x2="188" y2="243" stroke="#c2d0d3" stroke-width="1.5" stroke-dasharray="3 3"></line>
+                            <line x1="170" y1="435" x2="188" y2="435" stroke="#c2d0d3" stroke-width="1.5" stroke-dasharray="3 3"></line>
+                            <line x1="170" y1="523" x2="188" y2="523" stroke="#c2d0d3" stroke-width="1.5" stroke-dasharray="3 3"></line>
+
+                            <!-- setup -->
+                            <rect x="190" y="40" width="400" height="54" rx="12"
+                                  fill="#f2f6f5" stroke="#c2d0d3" stroke-width="1.5" stroke-dasharray="5 4"></rect>
+                            <text x="390" y="64" text-anchor="middle" font-size="14.5" font-weight="600" fill="#16303d">Duplicate the TEMPLATE tab</text>
+                            <text x="390" y="82" text-anchor="middle" font-size="11.5" fill="#5d7079">New month. No schema to rebuild, no dates to set.</text>
+
+                            <line x1="390" y1="94" x2="390" y2="126" stroke="#8497a0" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                            <!-- generate -->
+                            <rect x="190" y="128" width="400" height="54" rx="12"
+                                  fill="#ffffff" stroke="#c2d0d3" stroke-width="1.5"></rect>
+                            <text x="390" y="152" text-anchor="middle" font-size="14.5" font-weight="600" fill="#16303d">02 · Generate the month</text>
+                            <text x="390" y="170" text-anchor="middle" font-size="11.5" fill="#5d7079">Coach picks Mon/Tue/Fri strength · Claude writes the rest</text>
+
+                            <line x1="390" y1="182" x2="390" y2="214" stroke="#8497a0" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                            <!-- paste -->
+                            <rect x="190" y="216" width="400" height="54" rx="12"
+                                  fill="#ffffff" stroke="#c2d0d3" stroke-width="1.5"></rect>
+                            <text x="390" y="240" text-anchor="middle" font-size="14.5" font-weight="600" fill="#16303d">One TSV paste into A2</text>
+                            <text x="390" y="258" text-anchor="middle" font-size="11.5" fill="#5d7079">The whole month lands in a single action</text>
+
+                            <line x1="390" y1="270" x2="390" y2="302" stroke="#8497a0" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                            <!-- the sheet, the pivot -->
+                            <!-- emphasis carried by border weight and fill, not by
+                                 hue alone, so it survives color blindness -->
+                            <rect x="190" y="304" width="400" height="76" rx="12"
+                                  fill="#e9f4ee" stroke="#1f6b41" stroke-width="3.5"></rect>
+                            <text x="390" y="330" text-anchor="middle" font-size="14.5" font-weight="600" fill="#16303d">The Google Sheet is the source of truth</text>
+                            <text x="390" y="350" text-anchor="middle" font-size="11.5" fill="#1f6b41">The coach edits here, workouts and notes.</text>
+                            <text x="390" y="367" text-anchor="middle" font-size="11.5" fill="#1f6b41">Claude never edits cells or pastes over a hand-edit.</text>
+
+                            <line x1="390" y1="380" x2="390" y2="406" stroke="#8497a0" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                            <!-- btwb -->
+                            <rect x="190" y="408" width="400" height="54" rx="12"
+                                  fill="#ffffff" stroke="#c2d0d3" stroke-width="1.5"></rect>
+                            <text x="390" y="432" text-anchor="middle" font-size="14.5" font-weight="600" fill="#16303d">03 · Enter into btwb</text>
+                            <text x="390" y="450" text-anchor="middle" font-size="11.5" fill="#5d7079">Reads from the sheet, so sheet edits carry through</text>
+
+                            <line x1="390" y1="462" x2="390" y2="494" stroke="#8497a0" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                            <!-- comms -->
+                            <rect x="190" y="496" width="400" height="54" rx="12"
+                                  fill="#ffffff" stroke="#c2d0d3" stroke-width="1.5"></rect>
+                            <text x="390" y="520" text-anchor="middle" font-size="14.5" font-weight="600" fill="#16303d">04 · Comms</text>
+                            <text x="390" y="538" text-anchor="middle" font-size="11.5" fill="#5d7079">Cycle email · weekly Instagram + coaching summary</text>
+
+                            <!-- feedback loop, returns into 02 from the side -->
+                            <path d="M 590 523 H 648 V 155 H 596"
+                                  fill="none" stroke="#2f8f5b" stroke-width="2"
+                                  stroke-dasharray="6 4" marker-end="url(#arrow-green)"></path>
+                            <text x="668" y="339" text-anchor="middle" font-size="12.5"
+                                  fill="#1f6b41" transform="rotate(-90 668 339)">New efficiencies fold back into the prompts</text>
+                        </g>
+                    </svg>
+
+                    <figcaption>One decision holds this together. Once a month is
+                    pasted, the sheet is the source of truth. Not the model, not the
+                    chat. That step sits at the center of the diagram, drawn with a
+                    heavier border than the rest.</figcaption>
+                </figure>
+            </div>
+
+            <div class="project-body project-extra">
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>How it holds together</summary>
+                    <div class="more-body">
+                        <p>The design work was deciding where authority sits. The moment a
+                        month lands in the sheet, the sheet wins. The coach edits workouts
+                        and notes right there, and nothing regenerates over a hand-edit.
+                        Entry reads from the sheet instead of the conversation, so a change
+                        made on Tuesday is simply what gets entered. That one rule is what
+                        keeps a generated artifact from quietly overwriting a human
+                        decision.</p>
+
+                        <p>The rest is friction I removed by actually running it. A template
+                        tab that duplicates instead of a schema that rebuilds. One bulk paste
+                        instead of cell by cell writes. Movement names pinned to the
+                        platform's own vocabulary so its parser stops swapping in the wrong
+                        lift. Anything a run teaches goes back into the prompts, so the
+                        system gets cheaper to operate instead of more elaborate.</p>
+
+                        <p>It also shipped, which is the part I care about. I set the coach
+                        up with Claude and taught them Claude Code, so this runs without me.
+                        Designing something a non engineer can actually operate is a
+                        different problem from designing something that works. It's why the
+                        prompts read as plain instructions, why setup is "duplicate this
+                        tab", and why every step is something a coach can run on a Sunday
+                        without debugging anything.</p>
+
+                        <p>Built for one gym and structured to move. Every gym specific
+                        detail lives in one standing context file, so taking this somewhere
+                        else means swapping a single document.</p>
+                    </div>
+                </details>
+
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>Read the pipeline as text</summary>
+                    <div class="more-body">
+                        <ol class="pipeline-list">
+                            <li>Duplicate the TEMPLATE tab for the new month. No schema to rebuild.</li>
+                            <li>Generate the month. The coach chooses Monday, Tuesday, and Friday strength, and the rest is written to match, entry ready.</li>
+                            <li>One TSV paste into the first data cell. The whole month lands in a single action.</li>
+                            <li>The sheet becomes the source of truth. The coach edits workouts and notes directly. Nothing regenerates over a hand-edit.</li>
+                            <li>Enter into btwb, reading from the sheet, so any sheet edit carries through.</li>
+                            <li>Comms. Cycle launch email, plus a weekly Instagram caption and coaching meeting summary.</li>
+                            <li>Fold anything learned back into the prompts, so the next run starts cleaner.</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-media">
+                <div class="toolset">
+                    <p class="toolset-label">What I build in</p>
+                    <ul class="chip-list">
+                        <li class="chip"><svg class="icon"><use href="#i-chart"></use></svg>Spotfire</li>
+                        <li class="chip"><svg class="icon"><use href="#i-chart"></use></svg>Tableau</li>
+                        <li class="chip"><svg class="icon"><use href="#i-chart"></use></svg>Omni</li>
+                        <li class="chip"><svg class="icon"><use href="#i-chart"></use></svg>Hex</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-body">
+                <div class="project-head">
+                    <span class="icon-badge is-blue"><svg class="icon"><use href="#i-table"></use></svg></span>
+                    <p class="project-type">Analytics &amp; BI</p>
+                </div>
+                <h3 class="project-title">Dashboards and reporting</h3>
+                <p class="project-lede">My professional BI work is confidential, so it
+                can't live here. The tools and the thinking can.</p>
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>How I approach it</summary>
+                    <div class="more-body">
+                        <p>Most of what makes a dashboard useful happens before anything
+                        gets built. Which question it answers, who is actually going to
+                        open it, and what decision changes based on what they see. A chart
+                        that nobody acts on is decoration.</p>
+                        <p>The same care applies to how the numbers get drawn. Axes that
+                        start where they should, time frames that don't flatter, and a real
+                        trend line instead of a wall of figures. How data gets represented
+                        shapes how decisions get made, so the representation is part of
+                        the analysis and not a step that comes after it.</p>
+                    </div>
+                </details>
+            </div>
+        </article>
+    </section>
+
+    <!-- ============================================================
+         PRODUCT & UX
+         ============================================================ -->
+    <section class="work-section">
+        <div class="section-head">
+            <span class="icon-badge is-blue"><svg class="icon"><use href="#i-compass"></use></svg></span>
+            <p class="section-kicker">Product &amp; UX</p>
+        </div>
+        <h2 class="section-title">Structure people can actually navigate</h2>
+
+        <article class="project">
+            <div class="project-media">
+                <img src="../Images/work/ux-navigator.png"
+                     alt="The UX Navigator homepage. A dark navy site headed Navigating The Double Diamond Design Process, with a top navigation bar of color coded phase buttons for Empathize, Define, Ideate, Prototype, and Test, plus Community and a search field. An illustration shows a figure standing on a rocky outcrop looking out over a winding path marked with map pins.">
+            </div>
+            <div class="project-body">
+                <div class="project-head">
+                    <span class="icon-badge is-blue"><svg class="icon"><use href="#i-compass"></use></svg></span>
+                    <p class="project-type">Team project</p>
+                </div>
+                <h3 class="project-title">UX Navigator</h3>
+
+                <p class="project-lede">A guide to the double diamond design process.
+                Five phases, and a way through them that doesn't assume you already
+                know the words. You should be able to find what you need while you are
+                still learning the vocabulary.</p>
+
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>The architecture decision</summary>
+                    <div class="more-body">
+                        <p>We decided not to lean on search. Assuming every visitor already
+                        knows the vocabulary would have failed the people who needed the
+                        resource most. So the site walks you through one phase at a time
+                        while still letting you jump sideways between phase specific
+                        resources and templates, the way the design process actually behaves
+                        rather than the way it diagrams.</p>
+
+                        <p>We built it around a persona whose real problem was time to
+                        resource, meaning how long it took to find the right thing at any
+                        point in a project. Next steps we already know about are collapsible
+                        responsive navigation and building out the community layer.</p>
+                    </div>
+                </details>
+
+                <div class="project-links">
+                    <a href="https://cj-jewell.github.io/UX_Toolkit/">View live site</a>
+                    <a href="https://github.com/CJ-Jewell/UX_Toolkit">Source on GitHub</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-media">
+                <img src="../Images/work/GO Mobile Home.png" class="is-portrait"
+                     alt="Mobile mockup of the Greyhounds Oasis site shown in a phone frame. A blue running greyhound logo sits above a Hound Highlight panel with a photo of three people crouched beside two greyhounds, a caption congratulating an adopter and her new dog, and a large Adopt button below.">
+            </div>
+            <div class="project-body">
+                <div class="project-head">
+                    <span class="icon-badge is-blue"><svg class="icon"><use href="#i-compass"></use></svg></span>
+                    <p class="project-type">Design challenge</p>
+                </div>
+                <h3 class="project-title">Greyhounds Oasis</h3>
+                <p class="project-lede">A redesign for a greyhound rescue, built mobile
+                first around the only thing that really matters, getting a dog home.</p>
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>What I changed</summary>
+                    <div class="more-body">
+                        <p>Rescue sites tend to bury the adoption path under history,
+                        policy, and donation asks. I pulled Adopt up to where you land, gave
+                        the navigation a clearer structure, and made room for a Hound
+                        Highlight so real adoptions are visible instead of abstract.</p>
+                        <p>Seeing a specific dog with a specific family does more work than
+                        any amount of copy about the mission. This one is close to home for
+                        me. I foster and I love these dogs, so I already knew what the
+                        adopter side of that page feels like.</p>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-media">
+                <img src="../Images/work/FCC Desktop Home.png"
+                     alt="Desktop mockup of a redesigned FCC homepage shown on a monitor. A top navigation bar runs across the page, a dark map of the United States overlaid with glowing network arcs sits on the left above a We are the FCC introduction, and a yellow Quick Links panel on the right lists the Customer Complaint Center, Affordable Connectivity Program, and recent meetings and reports.">
+            </div>
+            <div class="project-body">
+                <div class="project-head">
+                    <span class="icon-badge is-blue"><svg class="icon"><use href="#i-compass"></use></svg></span>
+                    <p class="project-type">Design challenge</p>
+                </div>
+                <h3 class="project-title">FCC</h3>
+                <p class="project-lede">A government site rebuilt so people can find the
+                thing they actually came for.</p>
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>What I changed</summary>
+                    <div class="more-body">
+                        <p>Federal sites are usually organized around how the agency is
+                        structured rather than why anyone visits. Most people arrive with a
+                        complaint to file or a program to check eligibility for, so those
+                        got surfaced as Quick Links instead of sitting three levels down.</p>
+                        <p>The rest was making the language and the layout feel like they
+                        were written for the public, since the audience here is everyone.</p>
+                    </div>
+                </details>
+            </div>
+        </article>
+    </section>
+
+    <!-- ============================================================
+         DATA VISUALIZATION
+         ============================================================ -->
+    <section class="work-section viz-root">
+        <div class="section-head">
+            <span class="icon-badge"><svg class="icon"><use href="#i-chart"></use></svg></span>
+            <p class="section-kicker">Data Visualization</p>
+        </div>
+        <h2 class="section-title">A visualization is worth a thousand data points</h2>
+        <p class="section-note">Only if it's honest. Every figure here says what it
+        encodes, and every one has a way to the numbers that doesn't need color.</p>
+
+        <!-- ---------- the force graph ---------- -->
+        <figure class="figure" id="phylo-figure">
+            <h3 class="figure-title">Evolutionary structure of the wild tomato clade</h3>
+
+            <ul class="viz-legend" id="phylo-legend">
+                <li><span class="legend-swatch" style="background: var(--series-1)"></span> Species</li>
+                <li><span class="legend-swatch" style="background: var(--series-2)"></span> Outgroup</li>
+                <li><span class="legend-swatch" style="background: var(--series-3)"></span> Named clade</li>
+                <li><span class="legend-swatch" style="background: var(--structural)"></span> Ancestral node</li>
+            </ul>
+
+            <div id="phylo" role="img"
+                 aria-label="Force directed graph of evolutionary relationships among wild tomato species. The same relationships are listed in the table below.">
+            </div>
+
+            <figcaption>Drag any node. Hover for names.</figcaption>
+
+            <details class="more">
+                <summary><svg class="icon chev"><use href="#i-chev"></use></svg>Why it's colored this way</summary>
+                <div class="more-body">
+                    <p>Nodes are colored by their role in the tree, so species, outgroup,
+                    named clade, or unnamed ancestral node. They are not colored by which
+                    clade they belong to.</p>
+
+                    <p>A force layout can put any node next to any other, so a palette here
+                    has to stay readable across every possible pair. That caps it at three
+                    hues plus a neutral. An earlier version of this figure used seven cycled
+                    colors, which implied seven peer categories when the groups actually
+                    nest, and was never checked for color vision accessibility. Clade
+                    membership rides on the labeled clade nodes and the table, so nothing
+                    here depends on color alone.</p>
+                </div>
+            </details>
+
+            <details class="more">
+                <summary><svg class="icon chev"><use href="#i-chev"></use></svg>See it as a table</summary>
+                <div class="more-body">
+                    <table class="data-table">
+                        <caption class="sr-only">Wild tomato species grouped by clade</caption>
+                        <thead>
+                            <tr><th scope="col">Clade</th><th scope="col">Species</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Esculentum group</td><td><em>S. lycopersicum</em>, <em>S. pimpinellifolium</em>, <em>S. cheesmaniae</em>, <em>S. galapagense</em></td></tr>
+                            <tr><td>Arcanum group</td><td><em>S. arcanum</em>, <em>S. chmielewskii</em>, <em>S. neorickii</em></td></tr>
+                            <tr><td>Peruvianum group</td><td><em>S. corneliomulleri</em>, <em>S. huaylasense</em>, <em>S. peruvianum</em>, <em>S. chilense</em></td></tr>
+                            <tr><td>Hirsutum group</td><td><em>S. habrochaites</em>, <em>S. pennellii</em></td></tr>
+                            <tr><td>Outgroup</td><td><em>S. lycopersicoides</em></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+        </figure>
+
+        <!-- ---------- the flower plate ---------- -->
+        <figure class="figure">
+            <h3 class="figure-title">Floral morphology across the clade</h3>
+            <img src="../Images/work/Flower display.png"
+                 alt="A three by three grid of yellow wild tomato flowers photographed against black, one species per cell, each labeled with its binomial. The species shown are S. lycopersicum, S. pimpinellifolium, S. cheesmaniae, S. arcanum, S. chmielewskii, S. corneliomulleri, S. chilense, S. habrochaites, and S. pennellii. Petal shape and reflex vary conspicuously across the grid."
+                 style="width:100%; height:auto; border-radius:10px; display:block; border:1px solid var(--rule);">
+            <figcaption>Nine species, one cell each, shot the same way against the same
+            background. Hold everything constant except the thing you want compared and
+            the differences read on their own.</figcaption>
+        </figure>
+
+        <!-- ---------- tools, compact ---------- -->
+        <div class="tool-grid">
+            <article class="tool">
+                <div class="project-head">
+                    <span class="icon-badge"><svg class="icon"><use href="#i-table"></use></svg></span>
+                    <p class="project-type">R &amp; Shiny</p>
+                </div>
+                <h3 class="project-title">BioClim Data Explorer</h3>
+                <p class="project-lede">An interactive table for browsing and downloading
+                climate data across the wild tomato clade.</p>
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>Why I built it</summary>
+                    <div class="more-body">
+                        <p>Collaborators kept needing climate data for their own collection
+                        localities, and every request came through me. This let them pull it
+                        themselves.</p>
+                    </div>
+                </details>
+                <div class="project-links">
+                    <a href="https://github.com/CJ-Jewell/Extract_BioClim">Extract_BioClim</a>
+                    <a href="https://github.com/CJ-Jewell/CliMond-Extraction">CliMond-Extraction</a>
+                </div>
+            </article>
+
+            <article class="tool">
+                <div class="project-head">
+                    <span class="icon-badge"><svg class="icon"><use href="#i-pin"></use></svg></span>
+                    <p class="project-type">HTML &amp; Mapbox.js</p>
+                </div>
+                <h3 class="project-title">Wild Tomato Distribution Map</h3>
+                <p class="project-lede">Occurrence records across South America, with 17
+                species as layers you can switch on and off.</p>
+                <details class="more">
+                    <summary><svg class="icon chev"><use href="#i-chev"></use></svg>Why the layers matter</summary>
+                    <div class="more-body">
+                        <p>Range overlap between species is the actual question, and it's
+                        invisible in a table. Toggling layers is what turns a spreadsheet of
+                        coordinates into something you can interrogate.</p>
+                    </div>
+                </details>
+                <div class="project-links">
+                    <a href="https://github.com/CJ-Jewell/Interactive-Map-with-Mapbox">Source on GitHub</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SCIENTIFIC IMAGING
+         ============================================================ -->
+    <section class="work-section">
+        <div class="section-head">
+            <span class="icon-badge"><svg class="icon"><use href="#i-scope"></use></svg></span>
+            <p class="section-kicker">Scientific Imaging</p>
+        </div>
+        <h2 class="section-title">Microscopy and field work</h2>
+        <p class="section-note">Years of my life, in a greenhouse and on a hillside in
+        Ecuador. I still think pollen tubes are one of the most beautiful things I have
+        ever gotten to look at.</p>
+
+        <div class="image-grid">
+            <figure>
+                <img src="../Images/work/Fluourescent pollen.png"
+                     alt="Fluorescence micrograph of pollen tubes. A dense mat of fine orange threads runs down the length of a style, each tipped with a bright fluorescing point. A one thousand micrometre scale bar sits at top left.">
+                <figcaption>Pollen tubes growing through the style. Scale bar 1000&nbsp;&micro;m.</figcaption>
+            </figure>
+            <figure>
+                <img src="../Images/work/Style Blue.png"
+                     alt="Fluorescence micrograph in blue on black. A curved style with pollen tubes running along its length and a dense fluorescing mass of germinating pollen at the stigma end.">
+                <figcaption>Pollen germinating at the stigma.</figcaption>
+            </figure>
+            <figure>
+                <img src="../Images/work/Awake.png"
+                     alt="Two open yellow tomato flowers with reflexed petals and a prominent anther cone, photographed among green foliage in a greenhouse with plant labels visible behind.">
+                <figcaption>Flowers open, greenhouse crossing population.</figcaption>
+            </figure>
+            <figure>
+                <img src="../Images/work/Sleepy.png"
+                     alt="The same yellow tomato flowers with petals partly closed, photographed under warm low greenhouse lighting.">
+                <figcaption>The same plants closing up under low light.</figcaption>
+            </figure>
+            <figure>
+                <img src="../Images/work/Hab in Ecuador.png"
+                     alt="Close up of a wild tomato inflorescence in the field. Several bright yellow star shaped flowers with pointed reflexed petals, on densely hairy stems and deeply lobed gray green leaves, against out of focus scrub.">
+                <figcaption>Wild tomato in flower, in habitat.</figcaption>
+            </figure>
+            <figure>
+                <img src="../Images/work/Butterfly Ecuador.png"
+                     alt="A glasswing butterfly resting on a small yellow composite flower, its transparent wings edged in orange and marked with a white band, against broad green leaves.">
+                <figcaption>Glasswing butterfly, Ecuador field season.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         POSTERS
+         ============================================================ -->
+    <section class="work-section">
+        <div class="section-head">
+            <span class="icon-badge is-blue"><svg class="icon"><use href="#i-doc"></use></svg></span>
+            <p class="section-kicker">Scientific Communication</p>
+        </div>
+        <h2 class="section-title">Published research</h2>
+        <p class="section-note">Six peer reviewed papers between 2012 and 2020, plus
+        more than twenty conference presentations, ten of them talks. All of it circles
+        the thing that still gets me, which is how one population slowly becomes two,
+        and how you can catch that happening if you look closely enough. Funded in part
+        by an NSF Doctoral Dissertation Improvement Grant.</p>
+
+        <p class="dissertation">
+            <span class="dissertation-label">Dissertation</span>
+            <em>Evolution of Reproductive Behavior in Solanaceae</em>
+        </p>
+
+        <div class="project-links" style="margin-top:16px">
+            <a href="https://scholar.google.com/citations?user=3QhUU_0AAAAJ">View publications on Google Scholar</a>
+        </div>
+
+        <details class="more" style="margin-top:20px">
+            <summary><svg class="icon chev"><use href="#i-chev"></use></svg>Conference posters</summary>
+            <div class="more-body" style="max-width:none">
+                <p>Ten of these happened. Four survive in a form I can show you. They
+                aren't hosted anywhere else, so they live here.</p>
+                <div class="poster-grid">
+                    <img src="../Images/work/Style2.1 Poster.png" alt="Conference poster on style morphology in wild tomato species.">
+                    <img src="../Images/work/Gamete 1 Poster.png" alt="Conference poster on gametophytic competition, part one.">
+                    <img src="../Images/work/Gamete 2 Poster.png" alt="Conference poster on gametophytic competition, part two.">
+                    <img src="../Images/work/SLAW Poster.png" alt="SLAW conference poster on wild tomato reproductive biology.">
+                </div>
+            </div>
+        </details>
+    </section>
+
+    <!------- footer -->
+    <footer id="contact">
+        <p class="colab">Let's Collaborate!</p>
+        <ul class="footlist">
+            <li><a href="https://www.linkedin.com/in/cj-jewell">LinkedIn</a></li>
+            <li><a href="https://github.com/CJ-Jewell">GitHub</a></li>
+        </ul>
+        <p>Copyright 2026</p>
+    </footer>
+
+<script>
+// ---------------------------------------------------------------
+// Force directed phylogeny. D3 v7.
+//
+// Nodes are typed by ROLE, not clade. Three categorical hues plus
+// a neutral for structural nodes, which is what an all-pairs
+// layout can carry legibly. Reasoning is on the page itself.
+// ---------------------------------------------------------------
+(function () {
+    const nodes = [
+        { id: 0,  name: "<em>S. lycopersicoides</em>",                    role: "outgroup" },
+        { id: 1,  name: "MRCA",                                           role: "clade"    },
+        { id: 2,  name: "",                                               role: "node"     },
+        { id: 3,  name: "<em>S. cheesmaniae</em>",                        role: "tip"      },
+        { id: 4,  name: "<em>S. galapagense</em>",                        role: "tip"      },
+        { id: 5,  name: "",                                               role: "node"     },
+        { id: 6,  name: "Esculentum group",                               role: "clade"    },
+        { id: 7,  name: "<em>S. arcanum</em>",                            role: "tip"      },
+        { id: 8,  name: "<em>S. chmielewskii</em>",                       role: "tip"      },
+        { id: 9,  name: "<em>S. neorickii</em>",                          role: "tip"      },
+        { id: 10, name: "",                                               role: "node"     },
+        { id: 11, name: "Arcanum group",                                  role: "clade"    },
+        { id: 12, name: "Esculentum and Arcanum groups",                  role: "node"     },
+        { id: 13, name: "<em>S. corneliomulleri</em>",                    role: "tip"      },
+        { id: 14, name: "<em>S. huaylasense</em>",                        role: "tip"      },
+        { id: 15, name: "<em>S. peruvianum</em>",                         role: "tip"      },
+        { id: 16, name: "<em>S. chilense</em>",                           role: "tip"      },
+        { id: 17, name: "",                                               role: "node"     },
+        { id: 18, name: "Peruvianum group",                               role: "clade"    },
+        { id: 19, name: "",                                               role: "node"     },
+        { id: 20, name: "<em>S. habrochaites</em>",                       role: "tip"      },
+        { id: 21, name: "<em>S. pennellii</em>",                          role: "tip"      },
+        { id: 22, name: "Hirsutum group",                                 role: "clade"    },
+        { id: 23, name: "<em>Solanum</em> sect. <em>Lycopersicon</em>",   role: "clade"    },
+        { id: 24, name: "<em>S. lycopersicum</em>",                       role: "tip"      },
+        { id: 25, name: "<em>S. pimpinellifolium</em>",                   role: "tip"      }
+    ];
+
+    const links = [
+        [24, 2], [25, 2], [3, 5], [4, 5], [5, 6], [2, 6],
+        [8, 10], [9, 10], [7, 11], [10, 11], [11, 12], [6, 12],
+        [13, 17], [14, 17], [15, 17], [16, 18], [17, 18], [18, 19],
+        [12, 19], [20, 22], [21, 22], [22, 23], [19, 23], [0, 1], [23, 1]
+    ].map(([source, target]) => ({ source, target }));
+
+    const styles = getComputedStyle(document.querySelector(".viz-root"));
+    const colorFor = {
+        tip:      styles.getPropertyValue("--series-1").trim(),
+        outgroup: styles.getPropertyValue("--series-2").trim(),
+        clade:    styles.getPropertyValue("--series-3").trim(),
+        node:     styles.getPropertyValue("--structural").trim()
+    };
+    const radiusFor = { tip: 8, outgroup: 8, clade: 7, node: 5 };
+
+    // Fixed viewBox rather than a measured width. The script runs
+    // before layout has settled, so clientWidth lies.
+    const width  = 720;
+    const height = 540;
+
+    const svg = d3.select("#phylo")
+        .append("svg")
+        .attr("viewBox", [0, 0, width, height])
+        .attr("width", "100%")
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .style("max-height", height + "px")
+        .attr("aria-hidden", "true");
+
+    const tip = d3.select("body").append("div").attr("class", "viz-tip");
+
+    const link = svg.append("g")
+        .attr("stroke", styles.getPropertyValue("--baseline").trim())
+        .attr("stroke-width", 2)
+        .selectAll("line")
+        .data(links)
+        .join("line");
+
+    const node = svg.append("g")
+        // 2px surface ring, so overlapping marks stay separable
+        .attr("stroke", styles.getPropertyValue("--surface-1").trim())
+        .attr("stroke-width", 2)
+        .selectAll("circle")
+        .data(nodes)
+        .join("circle")
+        .attr("r", d => radiusFor[d.role])
+        .attr("fill", d => colorFor[d.role])
+        .style("cursor", "grab");
+
+    node.filter(d => d.name)
+        .on("mouseover focus", function (event, d) {
+            tip.html(d.name).style("opacity", 1);
+        })
+        .on("mousemove", function (event) {
+            tip.style("left", (event.pageX + 12) + "px")
+               .style("top",  (event.pageY - 28) + "px");
+        })
+        .on("mouseout blur", () => tip.style("opacity", 0));
+
+    // direct labels on the named clades, identity without color
+    const label = svg.append("g")
+        .attr("font-family", "'Space Grotesk', sans-serif")
+        .attr("font-size", 12)
+        .attr("fill", styles.getPropertyValue("--text-secondary").trim())
+        .attr("paint-order", "stroke")
+        .attr("stroke", styles.getPropertyValue("--surface-1").trim())
+        .attr("stroke-width", 3)
+        .selectAll("text")
+        .data(nodes.filter(d => d.role === "clade" && d.name.indexOf("<") === -1))
+        .join("text")
+        .attr("dy", -12)
+        .attr("text-anchor", "middle")
+        .text(d => d.name);
+
+    const simulation = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).distance(60))
+        .force("charge", d3.forceManyBody().strength(-320))
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        // clade nodes carry a text label, so they need a wider berth
+        .force("collide", d3.forceCollide(d => d.role === "clade" ? 34 : 18))
+        .on("tick", ticked);
+
+    function ticked() {
+        link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+        // keep labeled nodes clear of the edges so text isn't clipped
+        node.attr("cx", d => d.x = Math.max(70, Math.min(width - 70, d.x)))
+            .attr("cy", d => d.y = Math.max(24, Math.min(height - 16, d.y)));
+        label.attr("x", d => d.x).attr("y", d => d.y);
+    }
+
+    node.call(d3.drag()
+        .on("start", (event, d) => {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x; d.fy = d.y;
+        })
+        .on("drag", (event, d) => { d.fx = event.x; d.fy = event.y; })
+        .on("end", (event, d) => {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null; d.fy = null;
+        }));
+})();
+</script>
+
+</body>
+</html>
