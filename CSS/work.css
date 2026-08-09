@@ -51,13 +51,33 @@ body {
     color: var(--ink-body);
 }
 
+/* ---------- measure ----------
+   Nothing here caps the page, so on a wide monitor the content
+   runs the full viewport. That stretched raster images past their
+   native size and left every text column stranded in the left
+   half. One container fixes both. */
+.work-intro,
+.work-section {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Heading across the top, then the two paragraphs side by side.
+   A single 60ch column in a 1120px page reads as an unfinished
+   hero. Two columns use the width without stretching the line
+   length past comfortable. */
 .work-intro {
-    max-width: 60ch;
     padding: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4px 48px;
+    align-items: start;
 }
 
 .work-intro h1 {
     color: var(--ink);
+    grid-column: 1 / -1;
 }
 
 .work-intro .lead {
@@ -65,6 +85,10 @@ body {
     line-height: 1.55;
     color: var(--ink-body);
     margin-bottom: 0;
+}
+
+.work-intro .lead + p {
+    margin-top: 4px;
 }
 
 /* ---------- section rhythm ----------
@@ -160,8 +184,35 @@ body {
 /* in a stacked card the title comes first, then the diagram,
    then the collapsibles, so a heading is never mistaken for a
    caption on the figure above it */
-.project--stacked .project-intro {
+/* .project-body carries a 66ch cap further down the file. The
+   intro opts out at equal specificity only if it outranks it, so
+   this one is written against both classes. */
+.project--stacked .project-body.project-intro {
     margin-bottom: 20px;
+    /* Same problem as the page intro. Kicker and title on the
+       left, lede alongside, so the block spans the card instead
+       of trailing off at the halfway mark. */
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 48px;
+    align-items: start;
+}
+
+/* Kicker and title are wrapped together so they stay a unit. A
+   grid item spanning two rows spreads its height across them,
+   which pushed the title away from its own kicker. */
+.project--stacked .project-intro .intro-heading {
+    grid-column: 1;
+}
+
+.project--stacked .project-intro .intro-heading .project-title {
+    margin-bottom: 0;
+}
+
+.project--stacked .project-intro .project-lede {
+    grid-column: 2;
+    margin-top: 2px;
 }
 
 .project--stacked .project-extra {
@@ -194,9 +245,14 @@ body {
 
 /* The first project in a section sits directly under the section
    badge. Two badges stacked read as a duplicate, so the card drops
-   its own and keeps just the kicker. */
+   its own and keeps just the kicker. With the badge gone the head
+   is just a line of small caps, so it tucks closer to the title. */
 .work-section > .project:first-of-type .project-head .icon-badge {
     display: none;
+}
+
+.work-section > .project:first-of-type .project-head {
+    margin-bottom: 4px;
 }
 
 .project-type {
@@ -251,7 +307,8 @@ body {
 
 .project--stacked .project-media {
     width: 100%;
-    max-width: 1100px;
+    max-width: 100%;
+    min-width: 0;
     justify-self: center;
 }
 
@@ -431,6 +488,24 @@ body {
     overflow-x: auto;
 }
 
+/* Raster figures never render past their own pixels. Blown up to
+   fill a wide page a 530px source lands around 2.3x and goes to
+   mush. Cap at native size and center it. Swap in a larger export
+   and the cap can come up with it. */
+.figure-img {
+    display: block;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--rule);
+    margin-inline: auto;
+}
+
+.figure-img.is-native {
+    max-width: min(100%, 530px);
+}
+
 .figure figcaption {
     font-size: 15px;
     line-height: 1.55;
@@ -577,6 +652,19 @@ body {
     .project {
         grid-template-columns: 1fr;
         gap: 22px;
+    }
+
+    /* the paired columns stack, and the lede returns to flow
+       order under the title */
+    .work-intro,
+    .project--stacked .project-body.project-intro {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .project--stacked .project-intro .project-lede {
+        grid-column: 1;
+        grid-row: auto;
     }
 
     .section-title {
