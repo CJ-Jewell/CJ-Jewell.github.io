@@ -15,11 +15,9 @@
     <meta property="og:image:alt" content="CJ Jewell, PhD. Design + Data = Discovery.">
     <meta name="twitter:card" content="summary_large_image">
     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <link rel="stylesheet" href="CSS/style.css?v=10">
+    <link rel="stylesheet" href="CSS/style.css?v=11">
 
-    <script src="JS/index.js"></script>
+    <script src="JS/index.js?v=2" defer></script>
 
     <!--  Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,8 +116,18 @@
     </footer>
 
 
-    <div class = "preloader">
-        <img src="/Images/white-infinity-symbol-transparent-background-circle.png">
+    <div class="preloader" aria-hidden="true">
+        <svg viewBox="0 0 120 100" width="150" height="125">
+            <defs>
+                <linearGradient id="inf-grad" x1="15" y1="0" x2="105" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#2f8f5b"/>
+                    <stop offset="0.5" stop-color="#3fa8c9"/>
+                    <stop offset="1" stop-color="#2f6fd0"/>
+                </linearGradient>
+            </defs>
+            <path class="inf-track" pathLength="100" d="M60 50 C70 32 100 30 100 50 C100 70 70 68 60 50 C50 32 20 30 20 50 C20 70 50 68 60 50"/>
+            <path class="inf-trace" pathLength="100" d="M60 50 C70 32 100 30 100 50 C100 70 70 68 60 50 C50 32 20 30 20 50 C20 70 50 68 60 50"/>
+        </svg>
     </div>
 
 </body>
